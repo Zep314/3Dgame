@@ -21,11 +21,21 @@ NUM_RAYS = 300
 MAX_DEPTH = 800
 DELTA_ANGLE = FOV / NUM_RAYS
 DIST = NUM_RAYS / (2* math.tan(HALF_FOV))
-PROJ_COEFF = DIST * TILE
+PROJ_COEFF = 3 * DIST * TILE
 SCALE = WIDTH // NUM_RAYS
 
+# sprite settings
+DOUBLE_PI = 2 * math.pi
+CENTER_RAY = NUM_RAYS // 2 - 1
+FAKE_RAYS = 100
+
+# texture settings
+TEXTURE_WIDTH = 1200
+TEXTURE_HEIGHT = 1200
+TEXTURE_SCALE = TEXTURE_WIDTH // TILE
+
 # player settings
-player_pos = (HALF_WIDTH, HALF_HEIGHT)
+player_pos = (HALF_WIDTH // 4, HALF_HEIGHT - 50)
 player_angle = 0
 player_speed = 2
 
@@ -39,3 +49,6 @@ DARKGRAY = (40, 40, 40)
 PURPLE = (120, 0, 120)
 SKYBLUE = (0, 186, 255)
 YELLOW = (220, 220, 0)
+SANDY = (244, 164, 96)
+DARKBROWN = (97, 61, 25)
+DARKORANGE = (255, 140, 0)
