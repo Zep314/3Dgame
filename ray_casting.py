@@ -3,11 +3,11 @@ from settings import *
 from map import world_map, WORLD_WIDTH, WORLD_HEIGHT
 from numba import njit
 
-@njit(fastmath=True)
+@njit(fastmath=True, cache=True)
 def mapping(a, b):
-    return (a // TILE) * TILE, (b // TILE) * TILE
+    return int(a // TILE) * TILE, int(b // TILE) * TILE
 
-@njit(fastmath=True)
+@njit(fastmath=True, cache=True)
 def ray_casting(player_pos, player_angle, world_map):
     casted_walls = []
     ox, oy = player_pos
@@ -16,8 +16,8 @@ def ray_casting(player_pos, player_angle, world_map):
     cur_angle = player_angle - HALF_FOV
     for ray in range(NUM_RAYS):
         sin_a = math.sin(cur_angle)
-        cos_a = math.cos(cur_angle)
         sin_a = sin_a if sin_a else 0.000001
+        cos_a = math.cos(cur_angle)
         cos_a = cos_a if cos_a else 0.000001
 
         # verticals

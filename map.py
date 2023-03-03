@@ -26,7 +26,7 @@ matrix_map = [
 
 WORLD_WIDTH = len(matrix_map[0]) * TILE
 WORLD_HEIGHT = len(matrix_map) * TILE
-world_map = Dict.empty(key_type = types.UniTuple(int32,2), value_type = int32)
+world_map = Dict.empty(key_type=types.UniTuple(int32, 2), value_type=int32)
 mini_map = set()
 collision_walls = []
 for j, row in enumerate(matrix_map):

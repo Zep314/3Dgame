@@ -43,7 +43,7 @@ TEXTURE_SCALE = TEXTURE_WIDTH // TILE
 # player settings
 player_pos = (HALF_WIDTH // 4, HALF_HEIGHT - 50)
 player_angle = 0
-player_speed = 6
+player_speed = 3
 
 # colors
 WHITE = (255, 255, 255)
